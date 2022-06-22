@@ -9,5 +9,5 @@ add_subdirectory (runtime)
 add_executable (GameEngine "GameEngine.cpp" "GameEngine.h" "runtime/reflection/ReflectiveEnumerator.hpp")
 
 # TODO: Add tests and install targets if needed.
-
-target_link_libraries(GameEngine PUBLIC ECS)
+find_package(OpenGL REQUIRED)
+target_link_libraries(GameEngine PUBLIC ECS glfw glm OpenGL::GL glew)
