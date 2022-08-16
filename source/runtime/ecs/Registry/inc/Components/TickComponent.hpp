@@ -7,6 +7,7 @@ private:
 
 public:
     TickComponent() = delete;
+    ~TickComponent() override{}
     TickComponent(float delta_, float timeSinceStart_) {
         deltaTime = delta_;
         timeSinceStart = timeSinceStart_;

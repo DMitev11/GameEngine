@@ -10,9 +10,9 @@ add_library (ECS STATIC ${HEADER_FILES} ${SRC_FILES} )
 
 set_target_properties(ECS 
     PROPERTIES 
+    LINKER_LANGUAGE CXX
     RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_SOURCE_DIR}/bin/debug
     RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_SOURCE_DIR}/bin/release                                    
 ) 
- 
 target_link_libraries(ECS PUBLIC entt)  
 target_include_directories(ECS PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}) 

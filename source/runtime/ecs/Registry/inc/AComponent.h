@@ -12,6 +12,7 @@ public:
     typedef void(AComponent::* OnDestroyFunc)();
 
     AComponent() {}; 
+    virtual ~AComponent() {}; 
     virtual void onConstruct(float&& delta, float&& timeSinceStart_) = 0;
     virtual void onInitialize() = 0;
     virtual void onUpdate(float&& delta, float&& timeSinceStart_) = 0;

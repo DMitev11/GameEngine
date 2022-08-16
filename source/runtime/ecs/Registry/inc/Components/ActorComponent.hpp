@@ -5,6 +5,7 @@
 class ActorComponent : public AComponent {  
 public: 
     ActorComponent() {};
+    virtual ~ActorComponent() override {};
     virtual void onConstruct(float&& delta, float&& timeSinceStart_) {
 
     };
@@ -19,7 +20,7 @@ public:
         Emitter_OnUpdate.Emit(std::move(delta), std::move(timeSinceStart_));
     };
     virtual void onDestroy() override {
-        Emitter_OnDestroy.Emit();
+        Emitter_OnDestroy.Emit(); 
     };
 
 

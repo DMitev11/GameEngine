@@ -7,7 +7,8 @@ private:
 public:
     static constexpr auto in_place_delete = true;
 
-    RndComponent() {};
+    RndComponent() {}
+    ~RndComponent() override {}
     
     RndComponent(float delta_, float timeSinceStart_) {
         deltaTime = delta_;
@@ -26,7 +27,7 @@ public:
     void onUpdate(float&& delta, float&& timeSinceStart_) override {
         deltaTime = delta;
         timeSinceStart = timeSinceStart_;
-        ActorComponent::onUpdate(std::move(delta), std::move(timeSinceStart_));
+        //ActorComponent::onUpdate(std::move(delta), std::move(timeSinceStart_));
     };
     
     void onDestroy() override {};

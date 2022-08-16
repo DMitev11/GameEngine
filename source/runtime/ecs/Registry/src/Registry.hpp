@@ -1,5 +1,5 @@
 #include <entt.hpp>
-#include "../inc/win32/EnttEntity.h"
+#include "inc/win32/EnttEntity.h"
 #include "inc/Components/IdComponent.h"
 #include "inc/Components/TickComponent.hpp"
 
@@ -172,12 +172,11 @@ void Registry::removeComponent(Entity* entity) {
     entt::registry* _registry = (entt::registry*)_instance->registry;
     if (entity->id() <= -1) throw "Invalid entity";
     entt::entity entt_entity = ((EnttEntity*)entity)->entity();
-    Component* const component = _registry->try_get<Component>(entt_entity);
-    auto const type = entt::type_hash<Component>::value();
+    Component* const component = _registry->try_get<Component>(entt_entity); 
     assert(component);
     component->onDestroy(); 
     _registry->remove<Component>(entt_entity);
-    clean_pools<Component>(_registry);
+    //clean_pools<Component>(_registry);
     return;
 } 
 

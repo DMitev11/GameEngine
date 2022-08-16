@@ -19,7 +19,7 @@ protected:
     
 // Parameters 
     static Registry* instance;
-    void* registry;
+    void* registry = nullptr;
     int nonce = 0; 
     std::map<int, Entity*> entities;
 private: 

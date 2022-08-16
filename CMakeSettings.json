@@ -15,6 +15,16 @@
           "name": "CMAKE_INSTALL_PREFIX",
           "value": "D:/Projects/GameEngine/GameEngine/out/install/x64-Debug",
           "type": "PATH"
+        },
+        {
+          "name": "BUILD_NAME",
+          "value": "Win64",
+          "type": "STRING"
+        },
+        {
+          "name": "CONFIGURATION_NAME",
+          "value": "x64-Debug",
+          "type": "STRING"
         }
       ]
     }
